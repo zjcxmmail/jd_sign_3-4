@@ -1,4 +1,4 @@
-name: Github JD-sign bot
+name: 京东签到
 
 on:
     push:
@@ -17,9 +17,10 @@ jobs:
               uses: actions/setup-node@v1
               with:
                 node-version: '12.x'
-            - name: Run app
+            - name: 安装依赖
               run: npm install
-            - run: node app.js
+            - name: 签到
+              run: node app.js
               env:
                 JD_COOKIE: ${{ secrets.JD_COOKIE }}
                 JD_COOKIE_2: ${{ secrets.JD_COOKIE_2 }} 
